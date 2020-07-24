@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+</head>
+<body>
+<div id="app">
+    <mt-header title="标题过长会隐藏后面的内容啊哈哈哈哈">
+        <router-link to="/" slot="left">
+            <mt-button icon="back">返回</mt-button>
+        </router-link>
+        <mt-button icon="more" slot="right"></mt-button>
+    </mt-header>
+    <mt-button @click.native="handleClick">按钮</mt-button>
+
+    <mt-cell title="标题文字"></mt-cell>
+    <mt-cell title="标题文字" value="说明文字"></mt-cell>
+</div>
+</body>
+<script src="/js/axios.min.js"></script>
+<script src="/js/qs.js"></script>
+<!-- 先引入 Vue -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+
+
+<script>
+    import Vue from 'vue';
+    import Mint from 'mint-ui';
+    Vue.use(Mint);
+    new Vue({
+        el: '#app',
+        methods: {
+            handleClick: function() {
+                this.$toast('Hello world!')
+            }
+        },
+        mounted:function(){
+            axios.post("/getWebText",Qs.stringify({url:'http://rsj.weihai.gov.cn/art/2020/7/23/art_46521_2359410.html'})).then(data=>{
+                console.log(data);
+            });
+        }
+    })
+</script>
+</html>
