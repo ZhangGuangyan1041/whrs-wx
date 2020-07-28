@@ -96,7 +96,7 @@ public class ParseUrlImpl implements ParseUrlService {
                 HttpEntity httpEntity = response.getEntity();
                 String html = EntityUtils.toString(httpEntity, "utf-8");
                 map.put("data",html);
-                System.out.println(html);
+                //System.out.println(html);
             } else {
                 //如果返回状态不是200，比如404（页面不存在）等，根据情况做处理，这里略
                 System.out.println("返回状态不是200");

@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  * @modified By：
  * @version: 1.0.0
  */
-@Controller
+@RestController
 public class FunctionController {
     @Resource
     ParseUrlService parseUrlService;
