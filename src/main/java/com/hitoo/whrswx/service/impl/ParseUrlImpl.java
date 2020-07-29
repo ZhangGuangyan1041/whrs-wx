@@ -71,7 +71,7 @@ public class ParseUrlImpl implements ParseUrlService {
             String result = element.getText();
             result = result.replace("href='", "href='http://rsj.weihai.gov.cn/");
             list.add(result);
-            System.out.println(result);
+           /// System.out.println(result);
         }
         map.put("recordset", list);
         return map;
