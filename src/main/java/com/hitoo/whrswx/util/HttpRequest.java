@@ -39,9 +39,9 @@ public class HttpRequest {
      */
     public static String sendGet(String url, HashMap<String,String> param){
         realUrl= url + "?";
-        param.forEach((k,v)->{
+        /*param.forEach((k,v)->{
             realUrl+=k+"="+v+"&";
-        });
+        });*/
 
       return  sendGet(realUrl);
     }

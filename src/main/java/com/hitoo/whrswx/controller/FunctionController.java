@@ -21,14 +21,16 @@ public class FunctionController {
     ParseUrlService parseUrlService;
 
     @PostMapping("/parseUrl")
-    @CrossOrigin
     public Object parseUrl(@RequestParam("url") String url) throws Exception{
         return parseUrlService.getData(url);
     }
 
     @PostMapping("/getWebText")
-    @CrossOrigin
     public Object getWebText(@RequestParam("url") String url) throws Exception {
         return parseUrlService.getWebText(url);
+    }
+    @GetMapping("/")
+    public Object index()throws  Exception{
+        return "空白页";
     }
 }
